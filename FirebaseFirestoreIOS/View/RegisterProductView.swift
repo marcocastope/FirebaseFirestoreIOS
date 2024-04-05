@@ -36,7 +36,11 @@ struct RegisterProductView: View {
             
             Section {
                 Button(action: {
-                    
+                    let product = Product(
+                        name: productVM.name,
+                        price: Double(productVM.price) ?? 0,
+                        stock: Int(productVM.stock) ?? 0)
+                        productVM.saveProduct(product:product)
                 }, label: {
                     Text("Registrar")
                         .foregroundColor(.white)

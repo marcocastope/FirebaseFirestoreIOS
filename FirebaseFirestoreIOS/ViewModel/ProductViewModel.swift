@@ -7,8 +7,11 @@
 
 import Foundation
 import Combine
+import FirebaseFirestore
 
 final class ProductViewModel : ObservableObject {
+    
+    private let db = Firestore.firestore()
     
 //    INPUTS
     @Published var name = ""
@@ -42,5 +45,15 @@ final class ProductViewModel : ObservableObject {
         Publishers.CombineLatest3(isNameValid, isPriceValid, isStockValid)
             .map{ $0 && $1 && $2}
             .assign(to: &$isValid)
+    }
+    
+    func saveProduct(product: Product) {
+        do {
+            try db.collection("products").addDocument(from: product)
+            self.showMessage = true
+            self.message = "Producto registrado con éxito"
+        } catch {
+            print("Error to save: \(error.localizedDescription)")
+        }
     }
 }
