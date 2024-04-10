@@ -18,6 +18,9 @@
 		D15D524D2BC0B2BC00FCBC93 /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15D524C2BC0B2BC00FCBC93 /* TextFieldModifier.swift */; };
 		D15D524F2BC0B2E100FCBC93 /* RegisterProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15D524E2BC0B2E100FCBC93 /* RegisterProductView.swift */; };
 		D15D52572BC0B74D00FCBC93 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D15D52562BC0B74D00FCBC93 /* GoogleService-Info.plist */; };
+		D1B13AAC2BC6D44700D406D3 /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B13AAB2BC6D44700D406D3 /* ProductsView.swift */; };
+		D1B13AAE2BC6D61A00D406D3 /* ProductItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B13AAD2BC6D61A00D406D3 /* ProductItemView.swift */; };
+		D1B9FFCA2BC42DF0003E3387 /* NumerFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B9FFC92BC42DF0003E3387 /* NumerFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		D15D524C2BC0B2BC00FCBC93 /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifier.swift; sourceTree = "<group>"; };
 		D15D524E2BC0B2E100FCBC93 /* RegisterProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProductView.swift; sourceTree = "<group>"; };
 		D15D52562BC0B74D00FCBC93 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D1B13AAB2BC6D44700D406D3 /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
+		D1B13AAD2BC6D61A00D406D3 /* ProductItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductItemView.swift; sourceTree = "<group>"; };
+		D1B9FFC92BC42DF0003E3387 /* NumerFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumerFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,7 @@
 		D15D52312BC0B1FF00FCBC93 /* FirebaseFirestoreIOS */ = {
 			isa = PBXGroup;
 			children = (
+				D1B9FFC82BC42DE5003E3387 /* Utils */,
 				D15D52562BC0B74D00FCBC93 /* GoogleService-Info.plist */,
 				D15D52402BC0B21000FCBC93 /* View */,
 				D15D52422BC0B21600FCBC93 /* ViewModel */,
@@ -90,6 +97,8 @@
 			children = (
 				D15D524C2BC0B2BC00FCBC93 /* TextFieldModifier.swift */,
 				D15D524E2BC0B2E100FCBC93 /* RegisterProductView.swift */,
+				D1B13AAB2BC6D44700D406D3 /* ProductsView.swift */,
+				D1B13AAD2BC6D61A00D406D3 /* ProductItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -108,6 +117,14 @@
 				D15D524A2BC0B29400FCBC93 /* ProductViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D1B9FFC82BC42DE5003E3387 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D1B9FFC92BC42DF0003E3387 /* NumerFormatter.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,9 +205,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1B13AAE2BC6D61A00D406D3 /* ProductItemView.swift in Sources */,
 				D15D52352BC0B1FF00FCBC93 /* ContentView.swift in Sources */,
 				D15D524F2BC0B2E100FCBC93 /* RegisterProductView.swift in Sources */,
+				D1B9FFCA2BC42DF0003E3387 /* NumerFormatter.swift in Sources */,
 				D15D524D2BC0B2BC00FCBC93 /* TextFieldModifier.swift in Sources */,
+				D1B13AAC2BC6D44700D406D3 /* ProductsView.swift in Sources */,
 				D15D52332BC0B1FF00FCBC93 /* FirebaseFirestoreIOSApp.swift in Sources */,
 				D15D524B2BC0B29400FCBC93 /* ProductViewModel.swift in Sources */,
 				D15D52442BC0B23000FCBC93 /* Product.swift in Sources */,

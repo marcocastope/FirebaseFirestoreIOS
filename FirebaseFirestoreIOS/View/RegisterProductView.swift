@@ -15,6 +15,7 @@ struct RegisterProductView: View {
         Text("Registrar Producto")
             .font(.title)
             .fontWeight(.bold)
+            .padding(.top, 32)
         
         Form(content: {
             Section {

@@ -22,6 +22,7 @@ final class ProductViewModel : ObservableObject {
     @Published var showMessage = false
     @Published var message = ""
     @Published var isValid = false
+    @Published var products = [Product]()
     
     private lazy var isNameValid: AnyPublisher<Bool, Never> = {
        $name
@@ -45,6 +46,7 @@ final class ProductViewModel : ObservableObject {
         Publishers.CombineLatest3(isNameValid, isPriceValid, isStockValid)
             .map{ $0 && $1 && $2}
             .assign(to: &$isValid)
+        getProducts()
     }
     
     func saveProduct(product: Product) {
@@ -54,6 +56,18 @@ final class ProductViewModel : ObservableObject {
             self.message = "Producto registrado con éxito"
         } catch {
             print("Error to save: \(error.localizedDescription)")
+        }
+    }
+    
+    func getProducts() {
+        db.collection("products").addSnapshotListener { querySnapshot, error in
+            guard let documents = querySnapshot?.documents else {
+                print("Error fetching")
+                return
+            }
+            
+            let products = documents.compactMap{ Product(name: $0["name"] as! String, price: $0["price"] as! Double, stock: $0["stock"] as! Int) }
+            self.products = products
         }
     }
 }
